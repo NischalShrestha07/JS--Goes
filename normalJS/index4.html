@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    hellop
+    <script>
+        function sum(...numbers) {
+            let result = 0
+            for (let number of numbers) {
+                result += numbers
+
+            }
+            return result
+
+        }
+        // const total = sum(1)
+        // console.log("Your total is ${total}")
+        function getAvg(...numbers) {
+            let result = 0
+            for (let number of numbers) {
+                result += number
+
+            }
+            return result / numbers.length
+
+        }
+        const total = getAvg(75, 100, 85, 46, 24)
+        console.log("The average is:", total);
+    </script>
+
+
+</body>
+
+</html>

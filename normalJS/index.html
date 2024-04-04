@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: grey;
+        }
+        
+        h1 {
+            color: blue;
+        }
+        
+        form {
+            background: white;
+            text-align: center;
+            max-width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px black;
+        }
+        
+        #textBox {
+            width: 50%;
+            text-align: center;
+            font-size: 2em;
+            border: 2px solid black;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        label {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        button {
+            margin-top: 15px;
+            background: red;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: red;
+        }
+        
+        #result {
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <h1>Temperature Conversion:</h1>
+        <input type="number" name="" id="textBox" value="0">
+        <br>
+
+        <input type="radio" name="" id="toFahrenheit" name="unit">
+        <label for="toFahrenheit"> Celsius ➡ Fahrenheit</label>
+        <br>
+
+        <input type="radio" name="" id="toCelsius" name="unit">
+        <label for="toFahrenheit">Fahrenheit ➡ Celsius  </label> <br>
+        <button type="button" onclick="convert()">Submit</button>
+        <p id="result"></p>
+        <!-- <p id="result">Select a unit</p> -->
+
+    </form>
+    <script>
+        const textBox = document.getElementById("textBox")
+        const toFahrenheit = document.getElementById("toFahrenheit")
+        const toCelsius = document.getElementById("toCelsius")
+        const result = document.getElementById("result")
+        let temp;
+
+
+
+        function convert() {
+            if (toFahrenheit.checked) {
+                // result.textContent = "You selected to Fahrenheit"
+                temp = Number(textBox.value)
+                temp = temp * 9 / 5 + 32
+                result.textContent = temp.toFixed(1) + "°F"
+
+
+            } else if (toCelsius.checked) {
+                // result.textContent = "You selected to Celsius"
+                temp = Number(textBox.value)
+                temp = (remp - 32) * (5 / 9)
+                result.textContent = temp.toFixed(1) + "°C"
+
+            } else {
+                result.textContent = "Select a unit."
+            }
+
+        }
+    </script>
+</body>
+
+</html>
