@@ -13,8 +13,20 @@ function generatePassword(length, includeLowerCase, includeUpperCase, includeNum
     allowedChars += includeSymbols ? symbolChars : ""
 
 
-    console.log(allowedChars);
-    return ''
+    // console.log(allowedChars);
+    if (length <= 0) {
+        return `(password length must be at least 1)`
+    }
+    if (allowedChars.length == 0) {
+        return `(Atleast 1 set of charecter needs to be selected)`
+    }
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * allowedChars.length)
+        password += allowedChars(randomIndex)
+    }
+
+
+    return password
 }
 
 
