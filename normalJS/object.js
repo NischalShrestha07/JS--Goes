@@ -10,4 +10,5 @@ console.log(car.model);
 console.log(car.color);
 console.log(car.year);
 car.drive()
-    // car.brake()
+car.brake()
+sdsd
